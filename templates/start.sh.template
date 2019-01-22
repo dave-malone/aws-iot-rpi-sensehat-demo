@@ -1,0 +1,28 @@
+#!/bin/sh
+
+python3 --version
+
+# Check to see if root CA file exists, download if not
+if [ ! -f ./root-CA.crt ]; then
+  printf "\nDownloading AWS IoT Root CA certificate from AWS...\n"
+  curl https://www.amazontrust.com/repository/AmazonRootCA1.pem > root-CA.crt
+fi
+
+# install AWS Device SDK for Python if not already installed
+if [ ! -d ./aws-iot-device-sdk-python ]; then
+  printf "\nInstalling AWS SDK...\n"
+  git clone https://github.com/aws/aws-iot-device-sdk-python.git
+  pushd aws-iot-device-sdk-python
+  python3 setup.py install
+  popd
+fi
+
+# run temperature / humidity app using certificates downloaded in package
+printf "\nRunning SenseHat temperature / humidity application...\n"
+python3 temperature_humidity.py \
+  -e {{aws-iot-endpoint}} \
+  -r root-CA.crt \
+  -c {{thing-name}}.cert.pem \
+  -k {{thing-name}}.private.key \
+  -id {{thing-name}} \
+  -t "rpi/sense_hat"
