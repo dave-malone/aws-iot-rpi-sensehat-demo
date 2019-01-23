@@ -74,7 +74,7 @@ import pprint
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 sns = boto3.client('sns')
-iotDataClient = boto3.client('iot-data')
+iotDataClient = boto3.client('iot-data', region_name='us-east-1')
 
 thingName = 'etogw4_thing'
 
