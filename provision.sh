@@ -2,7 +2,7 @@ sudo apt-get update
 sudo apt-get install python3-pip jq git -y
 alias pip='pip3' && echo "alias pip='pip3'" >> /home/pi/.bashrc
 alias python='python3' && echo "python='python3'" >> /home/pi/.bashrc
-pip install awscli --upgrade --user
+pip3 install awscli --upgrade --user
 
 mkdir cli-output
 mkdir certificates

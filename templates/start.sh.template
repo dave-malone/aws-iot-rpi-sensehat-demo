@@ -25,4 +25,5 @@ python3 temperature_humidity.py \
   -c {{thing-name}}.cert.pem \
   -k {{thing-name}}.private.key \
   -id {{thing-name}} \
-  -t "rpi/sense_hat"
+  -t "rpi/sense_hat" \
+  > aws-iot.log 2>&1 &

@@ -1,0 +1,15 @@
+[Unit]
+Description=AWS IoT Demo
+After=network.target
+
+[Service]
+ExecStart=/bin/bash start.sh
+WorkingDirectory=/home/pi/aws-iot/
+Type=forking
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
