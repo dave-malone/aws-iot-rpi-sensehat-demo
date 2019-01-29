@@ -6,6 +6,8 @@
 
 ### AWS IoT Service
 
+Run the AWS IoT script as a systemd service. See the Raspberry Pi docs for more detail: https://www.raspberrypi.org/documentation/linux/usage/systemd.md
+
 Copy the `aws-iot.service` file to `/etc/systemd/system/aws-iot.service`:
 
 `sudo cp ./aws-iot.service /etc/systemd/system/`
