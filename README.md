@@ -2,9 +2,13 @@
 
 ![AWS IoT, IoT 1-Click Enterprise Button, and Raspberry Pi SenseHat Demo architecture](architecture.png "AWS IoT, IoT 1-Click Enterprise Button, and Raspberry Pi SenseHat Demo architecture")
 
-## Raspberry Pi Setup
+## AWS IoT setup
 
-### AWS IoT Service
+## AWS IoT 1-Click + Enterprise Button setup
+
+## Raspberry Pi setup
+
+### AWS IoT systemd service
 
 Run the AWS IoT script as a systemd service. See the Raspberry Pi docs for more detail: https://www.raspberrypi.org/documentation/linux/usage/systemd.md
 
